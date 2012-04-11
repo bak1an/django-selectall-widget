@@ -2,7 +2,8 @@
 
 * Add jquery to your project (if it is not added already)
 * Put __templates__ dir contents and __widgets.py__ file into your application dir
-* Use: ```python
+* Use: 
+```python
 from django import forms
 from myapp.widgets import CheckboxSelectMultipleWithSelectAll
 class MyForm(forms.Form):
