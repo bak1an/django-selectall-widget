@@ -1,0 +1,20 @@
+<fieldset style="border:none;">
+  {{original_widget}}
+  {% if empty %}
+    Nothing here.
+{% else %}
+  <label for="{{select_all_id}}">
+    <input id="{{select_all_id}}" name="{{select_all_name}}" {% if all_selected %}checked="on"{% endif %} type="checkbox" class="checkall">Check all</input>
+  </label>
+{% endif %}
+</fieldset>
+<script type="text/javascript">
+$(document).ready(function() {
+    if (typeof(document.__check_all_ready)=="undefined") {
+        $('.checkall').click(function () {
+            $(this).parents('fieldset:eq(0)').find(':checkbox').attr('checked', this.checked);
+        });
+        document.__check_all_ready = 1;   
+    }
+});
+</script>
